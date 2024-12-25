@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Meta Front-End Developer Capstone Project
 
 # Little-Lemon 🍋
@@ -9,3 +10,7 @@ Welcome to the Little Lemon Restaurant website repository. This project was crea
 --------
 
 ![preview](https://github.com/victorpreston/little-lemon-restaurant/assets/112781610/c89281ce-be90-4271-a15d-9f44f6153dee)
+=======
+# Sunday-school
+Meta capstone project
+>>>>>>> 5d4bcc169a9a24c27e6ab04c6b4a59b78a2005fd
