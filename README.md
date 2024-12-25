@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Meta Front-End Developer Capstone Project
 
 # Little-Lemon 🍋
@@ -14,3 +15,7 @@ Welcome to the Little Lemon Restaurant website repository. This project was crea
 # Sunday-school
 Meta capstone project
 >>>>>>> 5d4bcc169a9a24c27e6ab04c6b4a59b78a2005fd
+=======
+# Nothing-burger
+Capstone project for meta frontend development course 
+>>>>>>> d3ff4ac69bfd35c59e28c75b9e6314d7f28ae43d
