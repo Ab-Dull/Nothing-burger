@@ -1,0 +1,244 @@
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  transition: text-shadow 0.25s ease-out;
+  
+}
+
+.hover-underline-animation:hover {
+  text-shadow: 0 2px 10px rgba(234, 238, 22, 0.986), /* Softer outer glow */
+               0 0 5px rgba(255, 241, 51, 0.938),  /* Medium glow */
+               0 0 2px #fffb02;                 /* Inner glow */
+  color: #f1ebeb; /* Change text color on hover */
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  margin-top: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, #495e57, #7d9b93);
+  transform-origin: bottom center;
+  transition: transform 0.25s ease-out;
+
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}
+
+.nav-bar {
+  border-bottom: 2px solid #495e57;
+  width: 100%;
+  max-width: none;
+  padding: 0 6%;
+  align-items: center;
+  grid-template-columns: auto auto auto;
+  height: 6.25rem;
+}
+
+.nav-bar-logo {
+  grid-column: 1;
+  justify-self: start;
+  align-self: center;
+  line-height: 0;
+}
+
+.nav-bar-logo img {
+  width: 10rem;
+  height: 2.75rem;
+}
+
+.nav-bar-hamburger {
+  grid-column: 2;
+  display: none;
+  cursor: pointer;
+  color: #495e57;
+  background-color: transparent;
+}
+
+.nav-bar-hamburger svg {
+  width: 1.875rem;
+  height: 1.875rem;
+}
+
+.nav-bar-links {
+  grid-column: 3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 1.5rem;
+  transition: left 300ms linear;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+
+.nav-bar-button {
+  position: relative;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  line-height: 1;
+  color: #FFB902;
+  margin: 0;
+  padding: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-bar-button:hover {
+  color: #ffd700;
+}
+
+.nav-bar-button:focus {
+  color: #ffc107;
+  outline: none;
+}
+
+.nav-bar-button:active {
+  color: #FFB902;
+}
+
+.nav-bar-button:before,
+.nav-bar-button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+}
+
+.nav-bar-button:before {
+  top: 0;
+  left: 0;
+  box-shadow: inset 1px 1px 0 0 #FFB902;
+}
+
+.nav-bar-button:after {
+  right: 0;
+  bottom: 0;
+  box-shadow: inset -1px -1px 0 0 #FFB902;
+}
+
+.nav-bar-button:hover:before {
+  animation: hoverShadowBefore 1s forwards;
+}
+
+.nav-bar-button:hover:after {
+  animation: hoverShadowAfter 1s forwards;
+}
+
+@keyframes hoverShadowBefore {
+  0% {
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: 0;
+  }
+  33% {
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  66% {
+    width: 1px;
+    height: 1px;
+    top: calc(100% - 1px);
+    left: 0;
+  }
+  100% {
+    width: 100%;
+    height: 1px;
+    top: calc(100% - 1px);
+    left: 0;
+  }
+}
+
+@keyframes hoverShadowAfter {
+  0% {
+    width: 100%;
+    height: 1px;
+  }
+  33% {
+    width: 1px;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+  }
+  66% {
+    width: 1px;
+    height: 1px;
+    bottom: calc(100% - 1px);
+    right: 0;
+  }
+  100% {
+    width: 100%;
+    height: 1px;
+    bottom: calc(100% - 1px);
+    right: 0;
+  }
+}
+
+.button {
+  color: #1352d1;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button--dione {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background-color: var(--color-white);
+  border: none;
+}
+
+.button--dione span {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-bar-hamburger {
+    display: block !important; /* Override the display: none */
+    justify-self: end;
+  }
+
+  .nav-bar-links {
+    display: none; /* Hide by default on mobile */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 1rem 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .nav-bar-links.expanded {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-bar-links li {
+    margin: 1rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-bar {
+    position: relative;
+  }
+}
